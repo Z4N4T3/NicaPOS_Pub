@@ -19,9 +19,9 @@ let user = [
 
 const login = document.querySelector('#loginForm');
 
+let i =0;
 
 login.addEventListener('submit', function(){
-
     event.preventDefault();
     const pin = document.getElementById('pin').value;
 
@@ -32,6 +32,16 @@ login.addEventListener('submit', function(){
         
     }else{
         alert("Pin incorrecto!");
+        i++;
+        
+    }
+    if (i==3){
+        const mensaje =document.querySelector('#mensaje');
+        mensaje.style.color='red';
+        mensaje.innerHTML='Limite de intentos agotados <br> Por favor contactar con un administrador';
+        document.querySelector('input').style.display = 'none';
+        document.querySelector('#submit-btn').style.display = 'none';
+        
     }
 
 
