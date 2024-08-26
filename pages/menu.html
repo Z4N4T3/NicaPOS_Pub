@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina principal</title>
+    <title>Menu</title>
     <style>
         *{
             padding: 0%;
@@ -81,12 +81,29 @@
     </nav>
     <form action="#" enctype="multipart/form-data" autocomplete target="_self" id="formulario">
         <section>
-            <button type="submit" id="btn1">Crear orden</button> 
-            <button type="submit" id="btn2">Inventario</button>
-            <button type="submit" id="btn3">Reporte</button>
+            <button type="button" id="btn1">Crear orden</button> 
+            <button type="button" id="btn2">Inventario</button>
+            <button type="button" id="btn3">Reporte</button>
         </section>
     </form>
     <script>
+
+        document.getElementById('btn1').addEventListener('click',function(){
+
+            window.location.href='./order.html';
+        
+        });
+
+        document.getElementById('btn2').addEventListener('click',function(){
+
+            window.location.href='Inventario.html';
+        
+        });
+        document.getElementById('btn3').addEventListener('click',function(){
+
+            window.location.href ='./reporte.html';
+        
+        });
     
     </script>
 </body>
