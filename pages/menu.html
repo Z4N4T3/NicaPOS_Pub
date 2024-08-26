@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principal</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        nav{
+            background: black;
+            color:white;
+            display: flex;
+            flex-flow: row wrap;
+            height: 10vh;
+            justify-content: center;
+            align-items: center;
+            align-content: space-around;
+        }
+        #formulario{
+            width: 100vw;
+            height: 90vh;
+            background-color: aliceblue;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        section{
+            display: grid;
+            grid-template-columns: 30vw;
+            grid-auto-rows: 60px ;
+            grid-template-areas: "btn1"
+                                 "btn2"
+                                 "btn3";
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+        section>button{
+            border-radius: calc(1rem/1.25);
+            cursor: pointer;
+            height: 10vh;
+            background-color:rgb(67, 182, 253);
+            color: white;
+            border:none;
+            font-family: sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        #btn1{
+            grid-area: btn1;
+        }
+        #btn2{
+            grid-area:btn2;
+        }
+        #btn3{
+            grid-area:btn3;
+        }
+        @media(max-width:600px){
+            section{
+            display: grid;
+            grid-template-columns: 60vw;
+            grid-auto-rows: 60px ;
+        }
+            section>button{
+                font-size:.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h3>NicaPOS</h3>
+        <span>🔨</span>
+    </nav>
+    <form action="#" enctype="multipart/form-data" autocomplete target="_self" id="formulario">
+        <section>
+            <button type="submit" id="btn1">Crear orden</button> 
+            <button type="submit" id="btn2">Inventario</button>
+            <button type="submit" id="btn3">Reporte</button>
+        </section>
+    </form>
+    <script>
+    
+    </script>
+</body>
+</html>
