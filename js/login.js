@@ -41,6 +41,7 @@ login.addEventListener('submit', function(){
         mensaje.innerHTML='Limite de intentos agotados <br> Por favor contactar con un administrador';
         document.querySelector('input').style.display = 'none';
         document.querySelector('#submit-btn').style.display = 'none';
+        document.querySelector('h2').textContent = 'Denegado'
         
     }
 

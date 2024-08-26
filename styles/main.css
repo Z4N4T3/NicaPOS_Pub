@@ -13,7 +13,7 @@
     outline: 1px solid red;
 }
 .navy-header{
-    background-color: aqua;
+    background-color: #f34213;
 
 }
 .navy{
@@ -21,6 +21,7 @@
     justify-content: space-between;
     align-items: center;
     height: 10vh;
+    color: aliceblue;
 }
 
 .main-panel{
