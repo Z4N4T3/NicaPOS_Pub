@@ -40,4 +40,10 @@ for(let i =0; i<menuTittle.length;i++){
 }
 
 
+/*
+    interacciones con la nav-bar
+ */
+
+
+    
 
