@@ -29,7 +29,7 @@ let listaDePlatos = [
         estado: 'Disponible',
         cantidad: 20,
         precio: 8.99,
-        url: ''
+        iurl: 'https://www.laespanolaaceites.com/wp-content/uploads/2019/05/espaguetis-a-la-bolonesa-1080x671.jpg'
     },
     {
         nombre: 'Ensalada César con Pollo',
@@ -37,7 +37,7 @@ let listaDePlatos = [
         estado: 'Disponible',
         cantidad: 15,
         precio: 7.99,
-        url: ''
+        iurl: 'https://www.pronacatqma.com/images/com_yoorecipe/banner_superior/175_1.jpg'
 
     },
     {
@@ -46,7 +46,7 @@ let listaDePlatos = [
         estado: 'Disponible',
         cantidad: 25,
         precio: 9.49,
-        url: ''
+        iurl: 'https://www.serargentino.com/public/images/2021/01/16109941330-17-burger-773x458.jpg'
 
     },
     {
@@ -55,7 +55,7 @@ let listaDePlatos = [
         estado: 'Disponible',
         cantidad: 18,
         precio: 10.99,
-        url: ''
+        iurl: 'https://assets.unileversolutions.com/v1/799195.jpg'
 
     },
     {
@@ -64,7 +64,7 @@ let listaDePlatos = [
         estado: 'Disponible',
         cantidad: 30,
         precio: 7.49,
-        url: ''
+        iurl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_LMuCq2hLl8vHOksGJ4PgG6ywVcgCnbo-pQ&s'
 
     },
     {
@@ -73,7 +73,7 @@ let listaDePlatos = [
         estado: 'Disponible',
         cantidad: 12,
         precio: 11.99,
-        url: ''
+        iurl: 'https://peopleenespanol.com/thmb/B6EgpXMcUkTyl0PkQcdQlUCM4s0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/fielte-de-pescado-empanizado-2000-d96ae5dfbb42441eab898a818e519abb.jpg'
 
     },
     {
@@ -82,7 +82,7 @@ let listaDePlatos = [
         estado: 'Disponible',
         cantidad: 10,
         precio: 9.99,
-        url: ''
+        iurl: 'https://sivarious.com/wp-content/uploads/2017/03/lasana-de-carne-con-verduras.jpg'
 
     },
     {
@@ -91,7 +91,7 @@ let listaDePlatos = [
         estado: 'Disponible',
         cantidad: 8,
         precio: 13.99,
-        url: ''
+        iurl: 'https://www.paulinacocina.net/wp-content/uploads/2024/01/costillitas-bbq-Paulina-Cocina-Recetas-1200x675.jpg'
 
     }
 ];

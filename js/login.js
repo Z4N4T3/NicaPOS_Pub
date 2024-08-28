@@ -28,7 +28,7 @@ login.addEventListener('submit', function(){
     const usr = user.find(u => u.passcode === pin);
 
     if (usr){
-        window.location.href = './pages/menu.html';
+        window.location.href = '/menu.html';
         
     }else{
         alert("Pin incorrecto!");
