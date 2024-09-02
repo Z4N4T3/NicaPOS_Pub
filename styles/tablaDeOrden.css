@@ -1,0 +1,73 @@
+.order-panel{
+    outline: 1px solid red;
+    width: 30%;
+    height: 90vh;
+    padding: 16px;
+}
+.order-panel-container{
+    outline: 1px solid red;
+    background-color: aliceblue;
+    border-radius: 8px;
+    height: 100%;
+    position: relative;
+    padding: 16px;
+}
+.order-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #CDCDD0;
+}
+.detalle-orden{
+    border-collapse: collapse;
+    margin: 26px 0;
+    font-size: 0.9em;
+    width: 100%;
+    
+    border-bottom: 2px solid #CDCDD0;
+    margin-top: 16px;
+}
+
+.detalle-orden thead{
+    text-align: center;
+}
+
+.detalle-orden tbody{
+    text-align: center;
+}
+.order-footer{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 16px;
+
+
+}
+.cuenta{
+    border-bottom:1px solid #CDCDD0;
+    width: 100%;
+    text-align: justify;
+    margin-top: 16px;
+
+}
+
+.order-act{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5em;
+    margin-top: 16px;
+}
+.order-act-btn{
+    height: 48px;
+    width: 30%;
+    color: aliceblue;
+    border-radius: 8px;
+}
+
+#pay{
+    background-color: #006edc;
+}
+
+#cancel{
+    background-color: #E71D36;
+}

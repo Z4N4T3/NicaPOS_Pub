@@ -11,6 +11,9 @@
 h1,h2,h3,h4,h5, small{
     font-family: Barlow;
 }
+body{
+    background-color: #CDCDD0;
+}
 .container{
     width: 98%;
     margin: 0 auto;
@@ -29,8 +32,6 @@ h1,h2,h3,h4,h5, small{
 
 .main-panel{
     height: 90vh;
-    background-color:#CDCDD0;
-    ;
     display: flex;
 }
 
