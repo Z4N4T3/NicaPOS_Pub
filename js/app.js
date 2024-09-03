@@ -158,7 +158,7 @@ const changeQty = document.querySelector('.changeQty');
 const addMore = document.querySelector('#addMore');
 const addLess = document.querySelector('#addLess');
 const qtyInput = document.querySelector('#qtyInput');
-const qtySubmit = document.getElementById('#qtySubmit');
+const qtySubmit = document.getElementById('qtySubmit');
 
 let qty= parseInt(qtyInput.value);
 
@@ -177,31 +177,40 @@ addLess.addEventListener('click', function(){
     if (qty >1){
         qty -=1;
         qtyInput.value = qty;
-    
 
     }
 })
 
 qtySubmit.addEventListener('click',function(){
-    const iqty = parseInt(qtyInput.value);
-    addItem(iqty);
+    const iqty = parseInt(qtyInput.value)
+
+    if (iqty<1){
+        alert("Cantidad de Items Invalida!!!")
+    }else{
+        addOrderItem(iqty);
+    }
+
+    qtyInput.value = 1;
+    qty =1;
+    
+    // alert('Submitted');
 })
 // order 
 
-function addItem (iqty){
+function addOrderItem (iqty){
     const orderList = document.getElementById('order-list')
     const orderItem = document.createElement('tr');
     const orderItemH = document.createElement('th');
     const orderItemQty = document.createElement('td');
     const orderItemPrice = document.createElement('td');
     const orderItemAmount = document.createElement('td');
-    let price = 20;
+    let price = 20; 
     // obterne cantidad en dependencia del valor del input 
     // extraer el precio de la base de datos asi como el nombre 
     const ItemName = document.createTextNode('pizza');
     const ItemQty = document.createTextNode(iqty);
-    const itemPrice = document.createTextNode(price);
-    const ItemAmount = document.createTextNode(iqty*price);
+    const itemPrice = document.createTextNode('$' + price);
+    const ItemAmount = document.createTextNode('$'+iqty*price);
 
 
     orderList.appendChild(orderItem);
