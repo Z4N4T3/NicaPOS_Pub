@@ -54,9 +54,9 @@
                 <div class="item-card">
                     <figure class="item-img">
                         <div class="changeQty-container">
-                            <div class="changeQty">
+                            <div class="changeQty" >
                                 <button class="changeQty-btn" id="addLess">-</button>
-                                <input type="text" name="" id="" value="1" class="changeQty-in">
+                                <input type="text" name="" id="qtyInput" value="1" class="changeQty-in">
                                 <button class="changeQty-btn" id="addMore">+</button>
                             </div>
                             <button class="changeQty-submit" id="qtySubmit">Agregar</button>
@@ -64,6 +64,7 @@
                     </figure>
                     <h2 class="card-tittle">ItemName</h2>
                 </div>
+              
                 
             </div>    
            
@@ -86,18 +87,8 @@
                         <th>Monto</th>
                     </tr>
                 </thead>
-               <tbody>
-                    <tr>
-                        <th>Item</th>
-                        <td>3</td>
-                        <td>$7</td>
-                        <td>$21</td>
-                    </tr><tr>
-                        <th>Item</th>
-                        <td>3</td>
-                        <td>$7</td>
-                        <td>$21</td>
-                    </tr>
+               <tbody id="order-list">
+   
                </tbody>
 
             </table>

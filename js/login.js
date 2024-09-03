@@ -21,7 +21,7 @@ const login = document.querySelector('#loginForm');
 
 let i =0;
 
-login.addEventListener('submit', function(){
+login.addEventListener('submit', function(event){
     event.preventDefault();
     const pin = document.getElementById('pin').value;
 

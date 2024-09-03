@@ -129,10 +129,11 @@ body{
     align-content: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 45%);
+    display: none;
    
 }
 .changeQty{
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 .changeQty-btn{
     width: 40px;

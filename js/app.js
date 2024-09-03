@@ -106,6 +106,7 @@ let menuLista =[
 
 
 const buttons = document.querySelectorAll('.menu-btn')
+const panelItems = document.querySelector('#itemList')
 
 for (let btn of buttons){
     const btnId = btn.id
@@ -114,12 +115,11 @@ for (let btn of buttons){
 }
 
 function displayItems(){
-    const panelItems = document.querySelector('#itemList')
-    
+   
     panelItems.style.display = 'grid'
 
- 
 }
+
 
 
 
@@ -127,7 +127,7 @@ for(let i =0; i<menuTittle.length;i++){
     menuTittle[i].innerText = menuLista[i].nombre;
 }
 
-document.querySelector('#Bebidas').innerHTML = menuLista[2].platos[2].nombre
+// document.querySelector('#Bebidas').innerHTML = menuLista[2].platos[2].nombre
 
 
 
@@ -141,8 +141,78 @@ document.querySelector('#Bebidas').innerHTML = menuLista[2].platos[2].nombre
 
 
   /*
-    funciones de agregar items a la lista  
+    funciones de changeQty items a la orden  
   */ 
+// const itemCard = document.getElementsByClassName('item-card');
+// const qtyContainer = document.getElementsByClassName('changeQty-container');
+// const qtySelector = document.getElementsByClassName('changeQty');
+// const addMore = document.getElementById('addMore');
+// const addLess = document.getElementById('addLess');
+// const qtyInput = document.getElementById('changeQty-in');
+// const qtySubmit = document.getElementById('qtySubmit');
+
+const itemCard = document.querySelector('.item-card');
+const itemPicture = document.querySelector('.item-img');
+const qtyContainer = document.querySelector('.changeQty-container')
+const changeQty = document.querySelector('.changeQty');
+const addMore = document.querySelector('#addMore');
+const addLess = document.querySelector('#addLess');
+const qtyInput = document.querySelector('#qtyInput');
+const qtySubmit = document.getElementById('#qtySubmit');
+
+let qty= parseInt(qtyInput.value);
+
+
+itemCard.addEventListener('click',displayQtyBtns)
+
+function displayQtyBtns(){
+    qtyContainer.style.display = 'block';
+}
+
+addMore.addEventListener('click', function(){
+   qty+=1;
+   qtyInput.value= qty;
+})
+addLess.addEventListener('click', function(){
+    if (qty >1){
+        qty -=1;
+        qtyInput.value = qty;
     
 
+    }
+})
+
+qtySubmit.addEventListener('click',function(){
+    const iqty = parseInt(qtyInput.value);
+    addItem(iqty);
+})
+// order 
+
+function addItem (iqty){
+    const orderList = document.getElementById('order-list')
+    const orderItem = document.createElement('tr');
+    const orderItemH = document.createElement('th');
+    const orderItemQty = document.createElement('td');
+    const orderItemPrice = document.createElement('td');
+    const orderItemAmount = document.createElement('td');
+    let price = 20;
+    // obterne cantidad en dependencia del valor del input 
+    // extraer el precio de la base de datos asi como el nombre 
+    const ItemName = document.createTextNode('pizza');
+    const ItemQty = document.createTextNode(iqty);
+    const itemPrice = document.createTextNode(price);
+    const ItemAmount = document.createTextNode(iqty*price);
+
+
+    orderList.appendChild(orderItem);
+    orderItem.appendChild(orderItemH);
+    orderItem.appendChild(orderItemQty);
+    orderItem.appendChild(orderItemPrice);
+    orderItem.appendChild(orderItemAmount);
     
+    orderItemH.appendChild(ItemName);
+    orderItemQty.appendChild(ItemQty);
+    orderItemPrice.appendChild(itemPrice);
+    orderItemAmount.appendChild(ItemAmount);
+
+}
