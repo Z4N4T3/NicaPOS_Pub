@@ -145,3 +145,4 @@ document.querySelector('#Bebidas').innerHTML = menuLista[2].platos[2].nombre
   */ 
     
 
+    
