@@ -13,7 +13,7 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 20,
                 precio: 8.99,
-                iurl: '/src/img/espagueti.jpg'
+                pic: '/src/img/espagueti.jpg'
             },
             {
                 nombre: 'Ensalada César con Pollo',
@@ -21,7 +21,7 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 15,
                 precio: 7.99,
-                iurl: 'https://www.pronacatqma.com/images/com_yoorecipe/banner_superior/175_1.jpg'
+                pic: 'https://www.pronacatqma.com/images/com_yoorecipe/banner_superior/175_1.jpg'
         
             },
             {
@@ -30,7 +30,7 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 25,
                 precio: 9.49,
-                iurl: 'https://www.serargentino.com/public/images/2021/01/16109941330-17-burger-773x458.jpg'
+                pic: 'https://www.serargentino.com/public/images/2021/01/16109941330-17-burger-773x458.jpg'
         
             },
             {
@@ -39,7 +39,7 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 18,
                 precio: 10.99,
-                iurl: 'https://assets.unileversolutions.com/v1/799195.jpg'
+                pic: 'https://assets.unileversolutions.com/v1/799195.jpg'
         
             },
             {
@@ -48,7 +48,7 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 30,
                 precio: 7.49,
-                iurl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_LMuCq2hLl8vHOksGJ4PgG6ywVcgCnbo-pQ&s'
+                pic: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_LMuCq2hLl8vHOksGJ4PgG6ywVcgCnbo-pQ&s'
         
             },
             {
@@ -57,7 +57,7 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 12,
                 precio: 11.99,
-                iurl: 'https://peopleenespanol.com/thmb/B6EgpXMcUkTyl0PkQcdQlUCM4s0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/fielte-de-pescado-empanizado-2000-d96ae5dfbb42441eab898a818e519abb.jpg'
+                pic: 'https://peopleenespanol.com/thmb/B6EgpXMcUkTyl0PkQcdQlUCM4s0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/fielte-de-pescado-empanizado-2000-d96ae5dfbb42441eab898a818e519abb.jpg'
         
             },
             {
@@ -66,7 +66,7 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 10,
                 precio: 9.99,
-                iurl: 'https://sivarious.com/wp-content/uploads/2017/03/lasana-de-carne-con-verduras.jpg'
+                pic: 'https://sivarious.com/wp-content/uploads/2017/03/lasana-de-carne-con-verduras.jpg'
         
             },
             {
@@ -75,7 +75,7 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 8,
                 precio: 13.99,
-                iurl: 'https://www.paulinacocina.net/wp-content/uploads/2024/01/costillitas-bbq-Paulina-Cocina-Recetas-1200x675.jpg'
+                pic: 'https://www.paulinacocina.net/wp-content/uploads/2024/01/costillitas-bbq-Paulina-Cocina-Recetas-1200x675.jpg'
         
             }  
         ]
@@ -90,42 +90,42 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 50,
                 precio: 1.99,
-                iurl:'https://img.asmedia.epimg.net/resizer/v2/DSWLWJ7BVJD25JQT7YTRI63ES4.jpg?auth=e5ecd62e9d7c277d574a06940a3e8a964507e07307948442af52764f398bbdcd&width=1472&height=828&smart=true'
+                pic:'https://img.asmedia.epimg.net/resizer/v2/DSWLWJ7BVJD25JQT7YTRI63ES4.jpg?auth=e5ecd62e9d7c277d574a06940a3e8a964507e07307948442af52764f398bbdcd&width=1472&height=828&smart=true'
             },
             {
                 nombre: 'Jugo de Naranja',
                 estado: 'Disponible',
                 cantidad: 30,
                 precio: 2.99,
-                iurl: 'https://www.paulinacocina.net/wp-content/uploads/2023/06/jugo-de-naranja-receta-y-propiedades-1200x675.jpg'
+                pic: 'https://www.paulinacocina.net/wp-content/uploads/2023/06/jugo-de-naranja-receta-y-propiedades-1200x675.jpg'
             },
             {
                 nombre: 'Café Americano',
                 estado: 'Disponible',
                 cantidad: 40,
                 precio: 1.49,
-                iurl: 'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2023/08/17/16922909769586.jpg'
+                pic: 'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2023/08/17/16922909769586.jpg'
             },
             {
                 nombre: 'Agua Mineral',
                 estado: 'Disponible',
                 cantidad: 60,
                 precio: 1.29,
-                iurl: 'https://media.glamour.mx/photos/6190a9eff5ed039ceea889cd/master/w_1600%2Cc_limit/232430.jpg'
+                pic: 'https://media.glamour.mx/photos/6190a9eff5ed039ceea889cd/master/w_1600%2Cc_limit/232430.jpg'
             },
             {
                 nombre: 'Té Helado',
                 estado: 'Disponible',
                 cantidad: 35,
                 precio: 2.49,
-                iurl: 'https://preppykitchen.com/wp-content/uploads/2023/09/Long-Island-Iced-Tea-Recipe-Card-500x500.jpg'
+                pic: 'https://preppykitchen.com/wp-content/uploads/2023/09/Long-Island-Iced-Tea-Recipe-Card-500x500.jpg'
             },
             {
                 nombre: 'Limonada',
                 estado: 'Disponible',
                 cantidad: 25,
                 precio: 2.19,
-                iurl: 'https://preppykitchen.com/wp-content/uploads/2023/09/Long-Island-Iced-Tea-Recipe-Card-500x500.jpg'
+                pic: 'https://cdn0.celebritax.com/sites/default/files/styles/amp/public/recetas/limonada.jpg'
             },
             {
                 nombre: 'Batido de Fresa',
@@ -149,11 +149,65 @@ let menuLista =[
     },
     {
         nombre: 'Postres',
-        descripcion: 'Menu de postres del restaurante'
+        descripcion: 'Menu de postres del restaurante',
+        item:[
+            {
+                "nombre": "Tiramisú",
+                "estado": "Disponible",
+                "cantidad": 10,
+                "precio": 5.50,
+                "pic": "tiramisu.jpg"
+            },
+            {
+                "nombre": "Cheesecake de Fresa",
+                "estado": "Disponible",
+                "cantidad": 8,
+                "precio": 6.00,
+                "pic": "cheesecake_fresa.jpg"
+            },
+            {
+                "nombre": "Brownie de Chocolate",
+                "estado": "Disponible",
+                "cantidad": 15,
+                "precio": 4.00,
+                "pic": "brownie_chocolate.jpg"
+            },
+            {
+                "nombre": "Flan de Caramelo",
+                "estado": "Agotado",
+                "cantidad": 0,
+                "precio": 3.75,
+                "pic": "flan_caramelo.jpg"
+            }
+            
+        ]
     },
     {
         nombre: 'Extras',
-        descripcion: 'Menu de los extras o peticiones especiales'
+        descripcion: 'Menu de los extras o peticiones especiales',
+        item: [
+            {
+                nombre: "Extra Cheese",
+                estado: "disponible",
+                cantidad: 1,
+                precio: 0.50,
+                pic: "extra_cheese.jpg"
+            },
+            {
+                nombre: "Bacon",
+                estado: "no disponible",
+                cantidad: 0,
+                precio: 1.00,
+                pic: "bacon.jpg"
+            },
+            {
+                nombre: "Avocado",
+                estado: "disponible",
+                cantidad: 1,
+                precio: 1.50,
+                pic: "avocado.jpg"
+            }
+        ]
     }
 
 ];
@@ -176,7 +230,7 @@ for (let btn of buttons){
         addItemDataToHtml(Val)
        for (let i=0; i<itemTittle.length;i++){
         itemTittle[i].innerText=menuLista[Val].item[i].nombre
-        itemPic[i].style.backgroundImage = `url('${menuLista[Val].item[i].iurl}')`
+        itemPic[i].style.backgroundImage = `url('${menuLista[Val].item[i].pic}')`
     
        }
     })
@@ -293,14 +347,15 @@ const qtySubmit = document.getElementById('qtySubmit');
 let qty= parseInt(qtyInput.value);
 
 
-
 for (let but of itemCard){
     const qtyContainer = but.querySelector('.changeQty-container')
 
     but.addEventListener('click', function(){
         qtyContainer.style.display = 'block';
+        alert('click')
     })
 }
+
 
 
 // agregar los items al html
@@ -323,9 +378,9 @@ function addItemDataToHtml(val){
                             <button class="changeQty-submit" id="qtySubmit">Agregar</button>
                         </div>
                     </figure>
-                    <h2 class="item-name">ItemName</h2>
-            `;
+                    <h2 class="item-name">ItemName</h2>`;
             panelItems.appendChild(newItem);
         }
     }
 }
+
