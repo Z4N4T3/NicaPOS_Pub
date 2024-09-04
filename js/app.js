@@ -102,7 +102,7 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 30,
                 precio: 2.99,
-                iurl: 'https://www.joybauer.com/wp-content/uploads/2021/03/OJ.jpg'
+                iurl: 'https://www.paulinacocina.net/wp-content/uploads/2023/06/jugo-de-naranja-receta-y-propiedades-1200x675.jpg'
             },
             {
                 nombre: 'Café Americano',
@@ -116,7 +116,7 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 60,
                 precio: 1.29,
-                iurl: 'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2023/08/17/16922909769586.jpg'
+                iurl: 'https://media.glamour.mx/photos/6190a9eff5ed039ceea889cd/master/w_1600%2Cc_limit/232430.jpg'
             },
             {
                 nombre: 'Té Helado',
@@ -213,51 +213,53 @@ for(let i =0; i<menuTittle.length;i++){
     funciones de changeQty items a la orden  
   */ 
 
-const itemCard = document.querySelector('.item-card');
-const itemPicture = document.querySelector('.item-img');
-const qtyContainer = document.querySelector('.changeQty-container')
-const changeQty = document.querySelector('.changeQty');
-const addMore = document.querySelector('#addMore');
-const addLess = document.querySelector('#addLess');
-const qtyInput = document.querySelector('#qtyInput');
-const qtySubmit = document.getElementById('qtySubmit');
+// const itemCard = document.querySelector('.item-card');
+// const itemPicture = document.querySelector('.item-img');
+// const qtyContainer = document.querySelector('.changeQty-container')
+// const changeQty = document.querySelector('.changeQty');
+// const addMore = document.querySelector('#addMore');
+// const addLess = document.querySelector('#addLess');
+// const qtyInput = document.querySelector('#qtyInput');
+// const qtySubmit = document.getElementById('qtySubmit');
 
-let qty= parseInt(qtyInput.value);
+// let qty= parseInt(qtyInput.value);
+
+// // display qty
 
 
-itemCard.addEventListener('click',displayQtyBtns)
+// itemCard.addEventListener('click',displayQtyBtns)
 
-function displayQtyBtns(){
-    qtyContainer.style.display = 'block';
-}
+// function displayQtyBtns(){
+//     qtyContainer.style.display = 'block';
+// }
 
-addMore.addEventListener('click', function(){
-   qty+=1;
-   qtyInput.value= qty;
-})
-addLess.addEventListener('click', function(){
-    if (qty >1){
-        qty -=1;
-        qtyInput.value = qty;
+// addMore.addEventListener('click', function(){
+//    qty+=1;
+//    qtyInput.value= qty;
+// })
+// addLess.addEventListener('click', function(){
+//     if (qty >1){
+//         qty -=1;
+//         qtyInput.value = qty;
 
-    }
-})
+//     }
+// })
 
-qtySubmit.addEventListener('click',function(){
-    const iqty = parseInt(qtyInput.value)
+// qtySubmit.addEventListener('click',function(){
+//     const iqty = parseInt(qtyInput.value)
 
-    if (iqty<1 || isNaN(iqty)){
-        alert("Cantidad de Items Invalida!!!")
-    }else{
-        addOrderItem(iqty);
-    }
+//     if (iqty<1 || isNaN(iqty)){
+//         alert("Cantidad de Items Invalida!!!")
+//     }else{
+//         addOrderItem(iqty);
+//     }
 
-    qtyInput.value = 1;
-    qty =1;
+//     qtyInput.value = 1;
+//     qty =1;
     
-    // alert('Submitted');
-})
-// order 
+//     // alert('Submitted');
+// })
+// // order 
 
 function addOrderItem (iqty){
     const orderList = document.getElementById('order-list')
@@ -286,4 +288,26 @@ function addOrderItem (iqty){
     orderItemPrice.appendChild(itemPrice);
     orderItemAmount.appendChild(ItemAmount);
 
+}
+
+
+const itemCard = document.querySelectorAll('.item-card');
+const itemPicture = document.querySelector('.item-img');
+// const qtyContainer = document.querySelector('.changeQty-container')
+const changeQty = document.querySelector('.changeQty');
+const addMore = document.querySelector('#addMore');
+const addLess = document.querySelector('#addLess');
+const qtyInput = document.querySelector('#qtyInput');
+const qtySubmit = document.getElementById('qtySubmit');
+
+let qty= parseInt(qtyInput.value);
+
+
+
+for (let but of itemCard){
+    const qtyContainer = but.querySelector('.changeQty-container')
+
+    but.addEventListener('click', function(){
+        qtyContainer.style.display = 'block';
+    })
 }
