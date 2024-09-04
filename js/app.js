@@ -3,10 +3,6 @@
 
 // desplegar menu 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b34e12439eb62e48e84f6ba75b90715f17b3d827
 let menuLista =[
     {
         nombre: 'Platos',
