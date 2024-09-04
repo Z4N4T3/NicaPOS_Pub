@@ -301,7 +301,6 @@ const itemCard = document.querySelectorAll('.item-card');
 
 
 for (let btn of buttons){
-<<<<<<< HEAD
     const Val = btn.value
     btn.addEventListener('click',function(){
         displayItems(Val)
@@ -320,18 +319,6 @@ function displayItems(val){
     panelItems.style.display = 'grid'
 
     
-=======
-    this.addEventListener('click',displayItems);
-}
-
- 
-
-function displayItems(){
-    const panelItems = document.querySelector('#itemList')
-    
-    panelItems.style.display = 'grid'
- 
->>>>>>> b34e12439eb62e48e84f6ba75b90715f17b3d827
 }
 
 
@@ -339,18 +326,6 @@ for(let i =0; i<menuTittle.length;i++){
     menuTittle[i].innerText = menuLista[i].nombre;
 }
 
-<<<<<<< HEAD
-=======
-for (let j=0; j<itemTittle.length;j++){
-    itemTittle[j].innerText = platoTest[j].nombre
-    itemPic[j].src = platoTest[j].iurl
-}
-
-
-
-
-
->>>>>>> b34e12439eb62e48e84f6ba75b90715f17b3d827
 /*
     interacciones con la nav-bar
  */
