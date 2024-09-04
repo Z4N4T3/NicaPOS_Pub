@@ -25,6 +25,7 @@
     
     border-bottom: 2px solid #CDCDD0;
     margin-top: 16px;
+    
 }
 
 .detalle-orden thead{
@@ -71,3 +72,4 @@
 #cancel{
     background-color: #E71D36;
 }
+

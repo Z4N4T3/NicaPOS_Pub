@@ -1,7 +1,4 @@
 
-const itemPic = document.getElementsByClassName('item-picture')
-const itemTittle = document.getElementsByClassName('item-tittle')
-const menuTittle = document.getElementsByClassName('menuc')
 
 // desplegar menu 
 
@@ -14,14 +11,14 @@ let menuLista =[
     {
         nombre: 'Platos',
         descripcion: 'Menu de los platos del restaurante',
-        plato : [
+        item : [
             {
                 nombre: 'Spaghetti a la Boloñesa',
                 descripcion: 'Pasta spaghetti con salsa de carne y tomate, acompañada de queso parmesano.',
                 estado: 'Disponible',
                 cantidad: 20,
                 precio: 8.99,
-                iurl: 'https://www.laespanolaaceites.com/wp-content/uploads/2019/05/espaguetis-a-la-bolonesa-1080x671.jpg'
+                iurl: '/src/img/espagueti.jpg'
             },
             {
                 nombre: 'Ensalada César con Pollo',
@@ -90,8 +87,64 @@ let menuLista =[
     },
     {
         nombre: 'Bebidas',
-        descripcion: 'Menu de las bebidas del restaurante'
-
+        descripcion: 'Menu de las bebidas del restaurante',
+        item: [
+            {
+                nombre: 'Coca Cola',
+                descripcion: 'sdasd',
+                estado: 'Disponible',
+                cantidad: 50,
+                precio: 1.99,
+                iurl:'https://img.asmedia.epimg.net/resizer/v2/DSWLWJ7BVJD25JQT7YTRI63ES4.jpg?auth=e5ecd62e9d7c277d574a06940a3e8a964507e07307948442af52764f398bbdcd&width=1472&height=828&smart=true'
+            },
+            {
+                nombre: 'Jugo de Naranja',
+                estado: 'Disponible',
+                cantidad: 30,
+                precio: 2.99,
+                iurl: 'https://www.joybauer.com/wp-content/uploads/2021/03/OJ.jpg'
+            },
+            {
+                nombre: 'Café Americano',
+                estado: 'Disponible',
+                cantidad: 40,
+                precio: 1.49,
+                iurl: 'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2023/08/17/16922909769586.jpg'
+            },
+            {
+                nombre: 'Agua Mineral',
+                estado: 'Disponible',
+                cantidad: 60,
+                precio: 1.29,
+                iurl: 'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2023/08/17/16922909769586.jpg'
+            },
+            {
+                nombre: 'Té Helado',
+                estado: 'Disponible',
+                cantidad: 35,
+                precio: 2.49,
+                iurl: 'https://preppykitchen.com/wp-content/uploads/2023/09/Long-Island-Iced-Tea-Recipe-Card-500x500.jpg'
+            },
+            {
+                nombre: 'Limonada',
+                estado: 'Disponible',
+                cantidad: 25,
+                precio: 2.19,
+                iurl: 'https://preppykitchen.com/wp-content/uploads/2023/09/Long-Island-Iced-Tea-Recipe-Card-500x500.jpg'
+            },
+            {
+                nombre: 'Batido de Fresa',
+                estado: 'Disponible',
+                cantidad: 20,
+                precio: 3.49,
+            },
+            {
+                nombre: 'Cerveza Artesanal',
+                estado: 'Disponible',
+                cantidad: 15,
+                precio: 4.99,
+            }
+        ]
     },
     {
         nombre: 'Postres',
@@ -107,25 +160,41 @@ let menuLista =[
 
 const buttons = document.querySelectorAll('.menu-btn')
 const panelItems = document.querySelector('#itemList')
+const itemPic = document.getElementsByClassName('item-img')
+const itemTittle = document.getElementsByClassName('item-name')
+const menuTittle = document.getElementsByClassName('menuc')
+const IVA = 0.15;
+
+
 
 for (let btn of buttons){
-    const btnId = btn.id
-    btn.addEventListener('click',displayItems)
-
+    const Val = btn.value
+    btn.addEventListener('click',function(){
+        displayItems(Val)
+        
+       for (let i=0; i<itemTittle.length;i++){
+        itemTittle[i].innerText=menuLista[Val].item[i].nombre
+        itemPic[i].style.backgroundImage = `url('${menuLista[Val].item[i].iurl}')`
+    
+       }
+    })
+    
 }
 
-function displayItems(){
-   
+function displayItems(val){
+    
     panelItems.style.display = 'grid'
 
+    
 }
-
 
 
 
 for(let i =0; i<menuTittle.length;i++){
     menuTittle[i].innerText = menuLista[i].nombre;
 }
+
+
 
 // document.querySelector('#Bebidas').innerHTML = menuLista[2].platos[2].nombre
 
@@ -143,13 +212,6 @@ for(let i =0; i<menuTittle.length;i++){
   /*
     funciones de changeQty items a la orden  
   */ 
-// const itemCard = document.getElementsByClassName('item-card');
-// const qtyContainer = document.getElementsByClassName('changeQty-container');
-// const qtySelector = document.getElementsByClassName('changeQty');
-// const addMore = document.getElementById('addMore');
-// const addLess = document.getElementById('addLess');
-// const qtyInput = document.getElementById('changeQty-in');
-// const qtySubmit = document.getElementById('qtySubmit');
 
 const itemCard = document.querySelector('.item-card');
 const itemPicture = document.querySelector('.item-img');
@@ -184,7 +246,7 @@ addLess.addEventListener('click', function(){
 qtySubmit.addEventListener('click',function(){
     const iqty = parseInt(qtyInput.value)
 
-    if (iqty<1){
+    if (iqty<1 || isNaN(iqty)){
         alert("Cantidad de Items Invalida!!!")
     }else{
         addOrderItem(iqty);
@@ -209,8 +271,8 @@ function addOrderItem (iqty){
     // extraer el precio de la base de datos asi como el nombre 
     const ItemName = document.createTextNode('pizza');
     const ItemQty = document.createTextNode(iqty);
-    const itemPrice = document.createTextNode('$' + price);
-    const ItemAmount = document.createTextNode('$'+iqty*price);
+    const itemPrice = document.createTextNode('$ ' + price);
+    const ItemAmount = document.createTextNode('$ '+iqty*price);
 
 
     orderList.appendChild(orderItem);
