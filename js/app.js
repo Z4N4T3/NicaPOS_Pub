@@ -2,11 +2,6 @@
 
 // desplegar menu 
 
-
-
-
-
-
 let menuLista =[
     {
         nombre: 'Platos',
@@ -143,7 +138,13 @@ let menuLista =[
                 estado: 'Disponible',
                 cantidad: 15,
                 precio: 4.99,
-            }
+            },
+            {
+                nombre: 'Cerveza Artesanal',
+                estado: 'Disponible',
+                cantidad: 15,
+                precio: 4.99,
+            },
         ]
     },
     {
@@ -164,6 +165,7 @@ const itemPic = document.getElementsByClassName('item-img')
 const itemTittle = document.getElementsByClassName('item-name')
 const menuTittle = document.getElementsByClassName('menuc')
 const IVA = 0.15;
+const itemCard = document.querySelectorAll('.item-card');
 
 
 
@@ -171,7 +173,7 @@ for (let btn of buttons){
     const Val = btn.value
     btn.addEventListener('click',function(){
         displayItems(Val)
-        
+        addItemDataToHtml(Val)
        for (let i=0; i<itemTittle.length;i++){
         itemTittle[i].innerText=menuLista[Val].item[i].nombre
         itemPic[i].style.backgroundImage = `url('${menuLista[Val].item[i].iurl}')`
@@ -189,20 +191,9 @@ function displayItems(val){
 }
 
 
-
 for(let i =0; i<menuTittle.length;i++){
     menuTittle[i].innerText = menuLista[i].nombre;
 }
-
-
-
-// document.querySelector('#Bebidas').innerHTML = menuLista[2].platos[2].nombre
-
-
-
-
-
-
 
 /*
     interacciones con la nav-bar
@@ -291,7 +282,6 @@ function addOrderItem (iqty){
 }
 
 
-const itemCard = document.querySelectorAll('.item-card');
 const itemPicture = document.querySelector('.item-img');
 // const qtyContainer = document.querySelector('.changeQty-container')
 const changeQty = document.querySelector('.changeQty');
@@ -310,4 +300,32 @@ for (let but of itemCard){
     but.addEventListener('click', function(){
         qtyContainer.style.display = 'block';
     })
+}
+
+
+// agregar los items al html
+
+
+function addItemDataToHtml(val){
+    panelItems.innerHTML='';
+    if(menuLista[val].item.length>0){
+        for(let element of menuLista[val].item){
+            let newItem = document.createElement('div');
+            newItem.classList.add('item-card');
+            newItem.innerHTML= `
+            <figure class="item-img">
+                        <div class="changeQty-container">
+                            <div class="changeQty" >
+                                <button class="changeQty-btn" id="addLess">-</button>
+                                <input type="text" name="" id="qtyInput" value="1" class="changeQty-in">
+                                <button class="changeQty-btn" id="addMore">+</button>
+                            </div>
+                            <button class="changeQty-submit" id="qtySubmit">Agregar</button>
+                        </div>
+                    </figure>
+                    <h2 class="item-name">ItemName</h2>
+            `;
+            panelItems.appendChild(newItem);
+        }
+    }
 }
