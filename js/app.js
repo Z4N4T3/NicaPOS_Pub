@@ -286,29 +286,69 @@ let platoTest = [
 
     }  
 ]
-const buttons = document.querySelectorAll('.menu-btn')
+const menuButtons = document.querySelectorAll('.menu-btn')
 const panelItems = document.querySelector('#itemList')
 const itemPic = document.getElementsByClassName('item-img')
 const itemTittle = document.getElementsByClassName('item-name')
 const menuTittle = document.getElementsByClassName('menuc')
 const IVA = 0.15;
-const itemCard = document.querySelectorAll('.item-card');
 
 
-
-for (let btn of buttons){
+for (let btn of menuButtons){
     const Val = btn.value
     btn.addEventListener('click',function(){
         displayItems(Val)
         addItemDataToHtml(Val)
+        const itemCard = document.getElementsByClassName('item-card');
+        const qtyContainer = document.querySelectorAll('.changeQty-container')
+        const minus = document.querySelectorAll('.minus')
+        const plus = document.querySelectorAll('.plus')
+        const qtyInput = document.querySelectorAll('.changeQty-in')
+       
+        for(let i =0; i<itemCard.length;i++){
+            itemCard[i].addEventListener('click',function(){
+            
+            qtyContainer[i].style.display='block'
+
+            if(minus[i] && plus[i] && qtyInput[i]){
+                
+                let qty= parseInt(qtyInput[i].value)
+                minus[i].addEventListener('click',function(){
+                    if (qty >0){
+                        
+                        qty -=1;
+                        qtyInput[i].value = qty;
+                        
+                    }
+                  
+                  
+                })
+    
+                plus[i].addEventListener('click', function(){
+                   
+                    qty +=1;
+                    qtyInput[i].value = qty;
+                })
+    
+            }
+ 
+
+            })
+        }
+
+        
+        
        for (let i=0; i<itemTittle.length;i++){
         itemTittle[i].innerText=menuLista[Val].item[i].nombre
         itemPic[i].style.backgroundImage = `url('${menuLista[Val].item[i].pic}')`
-    
+        
        }
     })
     
+    
 }
+
+
 
 function displayItems(val){
     
@@ -317,10 +357,20 @@ function displayItems(val){
     
 }
 
+let qty= parseInt(qtyInput.value);
+
+
+function DisplaysetQty(){
+         qtyContainer[i].style.display='block'
+}
+
 
 for(let i =0; i<menuTittle.length;i++){
     menuTittle[i].innerText = menuLista[i].nombre;
 }
+
+
+
 
 /*
     interacciones con la nav-bar
@@ -409,29 +459,8 @@ function addOrderItem (iqty){
 }
 
 
-const itemPicture = document.querySelector('.item-img');
-// const qtyContainer = document.querySelector('.changeQty-container')
-const changeQty = document.querySelector('.changeQty');
-const addMore = document.querySelector('#addMore');
-const addLess = document.querySelector('#addLess');
-const qtyInput = document.querySelector('#qtyInput');
-const qtySubmit = document.getElementById('qtySubmit');
-
-let qty= parseInt(qtyInput.value);
 
 
-for (let but of itemCard){
-    const qtyContainer = but.querySelector('.changeQty-container')
-
-    but.addEventListener('click', function(){
-        qtyContainer.style.display = 'block';
-        alert('click')
-    })
-}
-
-
-
-// agregar los items al html
 
 
 function addItemDataToHtml(val){
@@ -444,9 +473,9 @@ function addItemDataToHtml(val){
             <figure class="item-img">
                         <div class="changeQty-container">
                             <div class="changeQty" >
-                                <button class="changeQty-btn" id="addLess">-</button>
+                                <button class="changeQty-btn minus" id="minus">-</button>
                                 <input type="text" name="" id="qtyInput" value="1" class="changeQty-in">
-                                <button class="changeQty-btn" id="addMore">+</button>
+                                <button class="changeQty-btn plus" id="plus">+</button>
                             </div>
                             <button class="changeQty-submit" id="qtySubmit">Agregar</button>
                         </div>

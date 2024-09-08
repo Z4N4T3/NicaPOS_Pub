@@ -8,11 +8,12 @@
     box-sizing: border-box;
 }
 
+
 h1,h2,h3,h4,h5, small, th,td{
     font-family: Barlow;
 }
 body{
-    background-color: #CDCDD0;
+    background-color: #FFF8E9;
 }
 .container{
     width: 98%;
@@ -20,7 +21,7 @@ body{
     outline: 1px solid red;
 }
 .navy-header{
-    background-color: #F74A1F;
+    background-color: #F77C16 ;
 
 }
 .navy{
@@ -30,6 +31,11 @@ body{
     height: 10vh;
 }
 
+
+.navy-icons{
+    color: aliceblue;
+    font-size: 32px;
+}
 .main-panel{
     height: 90vh;
     display: flex;
@@ -91,7 +97,8 @@ body{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;    
+    justify-content: center;
+    box-shadow: 3px 3px 8px  #FBB03B;   
 }
 
 .card button{
@@ -102,6 +109,10 @@ body{
 .card-tittle{
     padding: 16px 0;
     text-align: center;
+    background-color: aliceblue;
+    color: #F77C16;
+    font-size: 1.5em;
+    letter-spacing: 1px;
     
 }
 
@@ -112,6 +123,14 @@ body{
     text-align: center;
     background-color: aliceblue;
     border-radius: 8px;
+    box-shadow: 3px 3px 8px  #FBB03B;
+    color: #F77C16;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+.item-card:hover{
+    cursor: pointer;
+
 }
 
 .item-img{
@@ -149,10 +168,10 @@ body{
     text-align: center;
     margin: 0 4px;
 }
-#addMore{
+#minus{
     background-color: #006edc;
 }
-#addLess{
+#plus{
     background-color: #E71D36;
 
 }

@@ -11,9 +11,9 @@
 <body>
     <header class="navy-header">
         <nav class="navy container">
-            <button>Home</button>
-            <h1>Tomar Orden</h1>
-            <button>Settings</button>
+            <a href="/menu.html" class="navy-icons"><i class="bi bi-house-door-fill"></i></a>
+            <h1 class="navy-icons">Tomar Orden</h1>
+            <a href="" class="navy-icons"><i class="bi bi-gear-fill"></i></a>
         </nav>
     </header>
 
@@ -54,54 +54,16 @@
                     <figure class="item-img">
                         <div class="changeQty-container">
                             <div class="changeQty" >
-                                <button class="changeQty-btn" id="addLess">-</button>
+                                <button class="changeQty-btn minus" id="minus">-</button>
                                 <input type="text" name="" id="qtyInput" value="1" class="changeQty-in">
-                                <button class="changeQty-btn" id="addMore">+</button>
+                                <button class="changeQty-btn plus" id="plus">+</button>
                             </div>
                             <button class="changeQty-submit" id="qtySubmit">Agregar</button>
                         </div>
                     </figure>
                     <h2 class="item-name">ItemName</h2>
                 </div>
-                <div class="item-card">
-                    <figure class="item-img">
-                        <div class="changeQty-container">
-                            <div class="changeQty" >
-                                <button class="changeQty-btn" id="addLess">-</button>
-                                <input type="text" name="" id="qtyInput" value="1" class="changeQty-in">
-                                <button class="changeQty-btn" id="addMore">+</button>
-                            </div>
-                            <button class="changeQty-submit" id="qtySubmit">Agregar</button>
-                        </div>
-                    </figure>
-                    <h2 class="item-name">ItemName</h2>
-                </div>
-                <div class="item-card">
-                    <figure class="item-img">
-                        <div class="changeQty-container">
-                            <div class="changeQty" >
-                                <button class="changeQty-btn" id="addLess">-</button>
-                                <input type="text" name="" id="qtyInput" value="1" class="changeQty-in">
-                                <button class="changeQty-btn" id="addMore">+</button>
-                            </div>
-                            <button class="changeQty-submit" id="qtySubmit">Agregar</button>
-                        </div>
-                    </figure>
-                    <h2 class="item-name">ItemName</h2>
-                </div>
-                <div class="item-card">
-                    <figure class="item-img">
-                        <div class="changeQty-container">
-                            <div class="changeQty" >
-                                <button class="changeQty-btn" id="addLess">-</button>
-                                <input type="text" name="" id="qtyInput" value="1" class="changeQty-in">
-                                <button class="changeQty-btn" id="addMore">+</button>
-                            </div>
-                            <button class="changeQty-submit" id="qtySubmit">Agregar</button>
-                        </div>
-                    </figure>
-                    <h2 class="item-name">ItemName</h2>
-                </div>
+            
                 
             </div>    
            
@@ -156,6 +118,6 @@
     
     </main>
     <script src="/js/app.js"></script>
-    <script src="/js/db.js"></script>
+    <!-- <script src="/js/db.js"></script> -->
 </body>
 </html>
