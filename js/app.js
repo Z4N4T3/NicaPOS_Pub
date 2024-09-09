@@ -299,36 +299,62 @@ for (let btn of menuButtons){
     btn.addEventListener('click',function(){
         displayItems(Val)
         addItemDataToHtml(Val)
+    
         const itemCard = document.getElementsByClassName('item-card');
         const qtyContainer = document.querySelectorAll('.changeQty-container')
         const minus = document.querySelectorAll('.minus')
         const plus = document.querySelectorAll('.plus')
         const qtyInput = document.querySelectorAll('.changeQty-in')
-       
+        const qtySubmit = document.getElementsByClassName('changeQty-submit');
+      
+
         for(let i =0; i<itemCard.length;i++){
             itemCard[i].addEventListener('click',function(){
             
             qtyContainer[i].style.display='block'
 
-            if(minus[i] && plus[i] && qtyInput[i]){
+
+
+            if(minus[i] && plus[i] && qtyInput[i] && qtySubmit[i]){
                 
                 let qty= parseInt(qtyInput[i].value)
-                minus[i].addEventListener('click',function(){
+
+                minus[i].removeEventListener('click',handleMinus)
+    
+                plus[i].removeEventListener('click', handlePlus)
+
+                qtySubmit[i].removeEventListener('click',handleSubmit)
+
+                function handleMinus(){
                     if (qty >0){
                         
                         qty -=1;
                         qtyInput[i].value = qty;
                         
                     }
-                  
-                  
-                })
-    
-                plus[i].addEventListener('click', function(){
-                   
+                }
+                function handlePlus(){
                     qty +=1;
                     qtyInput[i].value = qty;
-                })
+                }
+                function handleSubmit(){
+                    const iqty = parseInt(qtyInput[i].value)
+                    
+                    if (iqty<1 || isNaN(iqty)){
+                        alert("Cantidad de Items Invalida!!!")
+                    }else{
+                        addOrderItem(iqty,menuLista[Val].item[i].precio,menuLista[Val].item[i].nombre);
+                        alert(qtyInput[i].value);
+                    }
+                
+                    qtyInput[i].value = 1;
+                      
+                    qtyContainer[i].style.display='none'
+                }
+                minus[i].addEventListener('click',handleMinus)
+                plus[i].addEventListener('click', handlePlus)
+                qtySubmit[i].addEventListener('click',handleSubmit)
+
     
             }
  
@@ -347,6 +373,7 @@ for (let btn of menuButtons){
     
     
 }
+
 
 
 
@@ -429,17 +456,17 @@ for(let i =0; i<menuTittle.length;i++){
 // })
 // // order 
 
-function addOrderItem (iqty){
+function addOrderItem (iqty,price,name){
     const orderList = document.getElementById('order-list')
     const orderItem = document.createElement('tr');
     const orderItemH = document.createElement('th');
     const orderItemQty = document.createElement('td');
     const orderItemPrice = document.createElement('td');
     const orderItemAmount = document.createElement('td');
-    let price = 20; 
+
     // obterne cantidad en dependencia del valor del input 
     // extraer el precio de la base de datos asi como el nombre 
-    const ItemName = document.createTextNode('pizza');
+    const ItemName = document.createTextNode(name);
     const ItemQty = document.createTextNode(iqty);
     const itemPrice = document.createTextNode('$ ' + price);
     const ItemAmount = document.createTextNode('$ '+iqty*price);

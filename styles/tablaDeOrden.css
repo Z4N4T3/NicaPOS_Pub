@@ -34,6 +34,7 @@
 
 .detalle-orden tbody{
     text-align: center;
+    overflow-y: scroll;
 }
 .order-footer{
     width: 100%;
