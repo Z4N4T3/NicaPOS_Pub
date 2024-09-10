@@ -307,7 +307,7 @@ for (let btn of menuButtons) {
         const qtySubmits = document.querySelectorAll('.changeQty-submit');
        
         function clearListeners() {
-            for (let i = 0; i < minusButtons.length; i++) {
+            for (let i = 0; i < itemCards.length; i++) {
                 minusButtons[i].removeEventListener('click', handleMinus);
                 plusButtons[i].removeEventListener('click', handlePlus);
                 qtySubmits[i].removeEventListener('click', handleSubmit);
@@ -353,8 +353,10 @@ for (let btn of menuButtons) {
         for (let i = 0; i < itemCards.length; i++) {
             itemCards[i].addEventListener('click', function(e) {
                 e.stopPropagation(); // Evita que el evento se propague hacia otros elementos
+                for (let j = 0; j < qtyContainers.length; j++){
+                    qtyContainers[j].style.display = 'none'
+                }
                 qtyContainers[i].style.display = 'block';
-
                 minusButtons[i].dataset.index = i;
                 plusButtons[i].dataset.index = i;
                 qtySubmits[i].dataset.index = i;
@@ -452,4 +454,5 @@ function addItemDataToHtml(val){
         }
     }
 }
+
 
