@@ -293,87 +293,84 @@ const itemTittle = document.getElementsByClassName('item-name')
 const menuTittle = document.getElementsByClassName('menuc')
 const IVA = 0.15;
 
+for (let btn of menuButtons) {
+    const Val = btn.value;
+    btn.addEventListener('click', function() {
+        displayItems(Val);
+        addItemDataToHtml(Val);
 
-for (let btn of menuButtons){
-    const Val = btn.value
-    btn.addEventListener('click',function(){
-        displayItems(Val)
-        addItemDataToHtml(Val)
-    
-        const itemCard = document.getElementsByClassName('item-card');
-        const qtyContainer = document.querySelectorAll('.changeQty-container')
-        const minus = document.querySelectorAll('.minus')
-        const plus = document.querySelectorAll('.plus')
-        const qtyInput = document.querySelectorAll('.changeQty-in')
-        const qtySubmit = document.getElementsByClassName('changeQty-submit');
-      
-
-        for(let i =0; i<itemCard.length;i++){
-            itemCard[i].addEventListener('click',function(){
-            
-            qtyContainer[i].style.display='block'
-
-
-
-            if(minus[i] && plus[i] && qtyInput[i] && qtySubmit[i]){
-                
-                let qty= parseInt(qtyInput[i].value)
-
-                minus[i].removeEventListener('click',handleMinus)
-    
-                plus[i].removeEventListener('click', handlePlus)
-
-                qtySubmit[i].removeEventListener('click',handleSubmit)
-
-                function handleMinus(){
-                    if (qty >0){
-                        
-                        qty -=1;
-                        qtyInput[i].value = qty;
-                        
-                    }
-                }
-                function handlePlus(){
-                    qty +=1;
-                    qtyInput[i].value = qty;
-                }
-                function handleSubmit(){
-                    const iqty = parseInt(qtyInput[i].value)
-                    
-                    if (iqty<1 || isNaN(iqty)){
-                        alert("Cantidad de Items Invalida!!!")
-                    }else{
-                        addOrderItem(iqty,menuLista[Val].item[i].precio,menuLista[Val].item[i].nombre);
-                        alert(qtyInput[i].value);
-                    }
-                
-                    qtyInput[i].value = 1;
-                      
-                    qtyContainer[i].style.display='none'
-                }
-                minus[i].addEventListener('click',handleMinus)
-                plus[i].addEventListener('click', handlePlus)
-                qtySubmit[i].addEventListener('click',handleSubmit)
-
-    
+        const itemCards = document.getElementsByClassName('item-card');
+        const qtyContainers = document.querySelectorAll('.changeQty-container');
+        const minusButtons = document.querySelectorAll('.minus');
+        const plusButtons = document.querySelectorAll('.plus');
+        const qtyInputs = document.querySelectorAll('.changeQty-in');
+        const qtySubmits = document.querySelectorAll('.changeQty-submit');
+       
+        function clearListeners() {
+            for (let i = 0; i < minusButtons.length; i++) {
+                minusButtons[i].removeEventListener('click', handleMinus);
+                plusButtons[i].removeEventListener('click', handlePlus);
+                qtySubmits[i].removeEventListener('click', handleSubmit);
             }
- 
-
-            })
         }
 
-        
-        
-       for (let i=0; i<itemTittle.length;i++){
-        itemTittle[i].innerText=menuLista[Val].item[i].nombre
-        itemPic[i].style.backgroundImage = `url('${menuLista[Val].item[i].pic}')`
-        
-       }
-    })
-    
-    
-}
+        function handleMinus(e) {
+            e.stopPropagation(); // Evita que el evento se propague hacia arriba
+            let index = this.dataset.index;
+            let qty = parseInt(qtyInputs[index].value);
+            if (qty > 1) {
+                qty -= 1;
+                qtyInputs[index].value = qty;
+            }
+        }
 
+        function handlePlus(e) {
+            e.stopPropagation(); // Evita que el evento se propague hacia arriba
+            let index = this.dataset.index;
+            let qty = parseInt(qtyInputs[index].value);
+            qty += 1;
+            qtyInputs[index].value = qty;
+        }
+
+        function handleSubmit(e) {
+            e.stopPropagation(); // Evita que el evento se propague hacia arriba
+            let index = this.dataset.index;
+            const iqty = parseInt(qtyInputs[index].value);
+            if (iqty < 1 || isNaN(iqty)) {
+                alert("Cantidad de Items Invalida!!!");
+            } else {
+                addOrderItem(iqty,2,'perro');
+            }
+
+            qtyInputs[index].value = 1; // Reiniciar el input
+            qtyContainers[index].style.display = 'none'; // Ocultar contenedor
+            alert('Agregado');
+        }
+
+
+        clearListeners();
+
+        for (let i = 0; i < itemCards.length; i++) {
+            itemCards[i].addEventListener('click', function(e) {
+                e.stopPropagation(); // Evita que el evento se propague hacia otros elementos
+                qtyContainers[i].style.display = 'block';
+
+                minusButtons[i].dataset.index = i;
+                plusButtons[i].dataset.index = i;
+                qtySubmits[i].dataset.index = i;
+        
+                minusButtons[i].addEventListener('click', handleMinus);
+                plusButtons[i].addEventListener('click', handlePlus);
+                qtySubmits[i].addEventListener('click',handleSubmit)
+            });
+        }
+
+        for (let i = 0; i < itemTittle.length; i++) {
+            itemTittle[i].innerText = menuLista[Val].item[i].nombre;
+            itemPic[i].style.backgroundImage = `url('${menuLista[Val].item[i].pic}')`;
+        }
+    });
+}
 
 
 
@@ -398,63 +395,6 @@ for(let i =0; i<menuTittle.length;i++){
 
 
 
-
-/*
-    interacciones con la nav-bar
- */
-
-
-  /*
-    funciones de changeQty items a la orden  
-  */ 
-
-// const itemCard = document.querySelector('.item-card');
-// const itemPicture = document.querySelector('.item-img');
-// const qtyContainer = document.querySelector('.changeQty-container')
-// const changeQty = document.querySelector('.changeQty');
-// const addMore = document.querySelector('#addMore');
-// const addLess = document.querySelector('#addLess');
-// const qtyInput = document.querySelector('#qtyInput');
-// const qtySubmit = document.getElementById('qtySubmit');
-
-// let qty= parseInt(qtyInput.value);
-
-// // display qty
-
-
-// itemCard.addEventListener('click',displayQtyBtns)
-
-// function displayQtyBtns(){
-//     qtyContainer.style.display = 'block';
-// }
-
-// addMore.addEventListener('click', function(){
-//    qty+=1;
-//    qtyInput.value= qty;
-// })
-// addLess.addEventListener('click', function(){
-//     if (qty >1){
-//         qty -=1;
-//         qtyInput.value = qty;
-
-//     }
-// })
-
-// qtySubmit.addEventListener('click',function(){
-//     const iqty = parseInt(qtyInput.value)
-
-//     if (iqty<1 || isNaN(iqty)){
-//         alert("Cantidad de Items Invalida!!!")
-//     }else{
-//         addOrderItem(iqty);
-//     }
-
-//     qtyInput.value = 1;
-//     qty =1;
-    
-//     // alert('Submitted');
-// })
-// // order 
 
 function addOrderItem (iqty,price,name){
     const orderList = document.getElementById('order-list')
