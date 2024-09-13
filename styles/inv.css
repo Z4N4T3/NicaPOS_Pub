@@ -1,0 +1,8 @@
+.item-picture-big{
+    width: 100%;
+    height: 42%;
+    background-image: url(/src/img/default.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
