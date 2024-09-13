@@ -1,11 +1,11 @@
 .secondary-panel{
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     width: 30%;
     height: 90vh;
     padding: 16px;
 }
 .secondary-panel-container{
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     background-color: aliceblue;
     border-radius: 8px;
     height: 100%;

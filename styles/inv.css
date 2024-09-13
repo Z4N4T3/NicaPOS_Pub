@@ -6,7 +6,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.item-description{
+    font-size: 0.8rem;
+}
 table {
     border-collapse: collapse;
     margin: 26px 0;
@@ -17,7 +19,7 @@ table {
 }
 
 table tr{
-    height: 2rem;
+    height: 1rem;
     border-bottom: 1px solid gainsboro;
 }
 
