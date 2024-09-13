@@ -14,7 +14,7 @@
         <nav class="navy container">
             <a href="/menu.html" class="navy-icons"><i class="bi bi-house-door-fill"></i></a>
             <h1 class="navy-icons">Inventario</h1>
-            <a href="" class="navy-icons"><i class="bi bi-gear-fill"></i></a>
+            <a class="navy-icons" id="add-item"><i class="bi bi-plus-square-fill" id="icon"></i></a>
         </nav>
     </header>
     <main class="main-panel">
@@ -93,13 +93,43 @@
                 </table>
                 <footer class="secondary-panel-footer">
                     <h2>Categoria</h2>
-                    
+
                     <h2>Menu</h2>
                     <button></button>
                     <button class="act-btn">Modificar</button>
                 </footer>
             </div>
          </section>
-
+    <div class="lightbox">
+        <section class="lightbox-container">
+            <h2>Modificar Item</h2>
+            <form action="" id="regItem">
+                <section>
+                    <div>
+                        <label for="">Nombre</label>
+                  
+                        <input type="text" name="" id="">
+                    </div>
+                    <div>
+                        <label for="">Descripcion</label>
+                        <input type="text" name="" id="">
+                    </div>
+                </section>
+                <div>
+                    <p>Estado</p>
+                    
+                    <input type="radio" id="disponible" name="estado">
+                    <label for="disponible">Disponible</label>
+                    
+                    <input type="radio" id="noDisponible" name="estado">
+                    <label for="noDisponible">No disponible</label>
+                </div>
+                
+                <label for="">Cantidad</label>
+                <input type="number" name="" id="">
+            </form>
+        </section>
+    </div>
+    <script src="/js/inventario.js"></script>
 </body>
 </html>

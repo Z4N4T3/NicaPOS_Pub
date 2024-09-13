@@ -64,6 +64,8 @@
     width: 30%;
     color: aliceblue;
     border-radius: 8px;
+    cursor: pointer;
+
 }
 
 #pay{
