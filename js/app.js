@@ -305,7 +305,8 @@ for (let btn of menuButtons) {
         const plusButtons = document.querySelectorAll('.plus');
         const qtyInputs = document.querySelectorAll('.changeQty-in');
         const qtySubmits = document.querySelectorAll('.changeQty-submit');
-       
+        // let menu = menuLista[Val]
+
         function clearListeners() {
             for (let i = 0; i < itemCards.length; i++) {
                 minusButtons[i].removeEventListener('click', handleMinus);
@@ -315,7 +316,7 @@ for (let btn of menuButtons) {
         }
 
         function handleMinus(e) {
-            e.stopPropagation(); // Evita que el evento se propague hacia arriba
+            e.stopPropagation(); 
             let index = this.dataset.index;
             let qty = parseInt(qtyInputs[index].value);
             if (qty > 1) {
@@ -325,34 +326,37 @@ for (let btn of menuButtons) {
         }
 
         function handlePlus(e) {
-            e.stopPropagation(); // Evita que el evento se propague hacia arriba
+            e.stopPropagation(); 
             let index = this.dataset.index;
             let qty = parseInt(qtyInputs[index].value);
             qty += 1;
             qtyInputs[index].value = qty;
         }
 
-        function handleSubmit(e) {
-            e.stopPropagation(); // Evita que el evento se propague hacia arriba
-            let index = this.dataset.index;
+        function handleSubmit(e,precio,nombre) {
+            e.stopPropagation(); 
+            let index = e.currentTarget.dataset.index;
             const iqty = parseInt(qtyInputs[index].value);
             if (iqty < 1 || isNaN(iqty)) {
                 alert("Cantidad de Items Invalida!!!");
             } else {
-                addOrderItem(iqty,2,'perro');
+                addOrderItem(iqty,precio,nombre);
+                alert('Agregado');
             }
 
-            qtyInputs[index].value = 1; // Reiniciar el input
-            qtyContainers[index].style.display = 'none'; // Ocultar contenedor
-            alert('Agregado');
+            qtyInputs[index].value = 1; 
+            qtyContainers[index].style.display = 'none'
+           
         }
 
 
         clearListeners();
 
         for (let i = 0; i < itemCards.length; i++) {
+            let itemNombre = menuLista[Val].item[i].nombre
+            let itemPrecio = menuLista[Val].item[i].precio
             itemCards[i].addEventListener('click', function(e) {
-                e.stopPropagation(); // Evita que el evento se propague hacia otros elementos
+                e.stopPropagation(); 
                 for (let j = 0; j < qtyContainers.length; j++){
                     qtyContainers[j].style.display = 'none'
                 }
@@ -363,7 +367,9 @@ for (let btn of menuButtons) {
         
                 minusButtons[i].addEventListener('click', handleMinus);
                 plusButtons[i].addEventListener('click', handlePlus);
-                qtySubmits[i].addEventListener('click',handleSubmit)
+                qtySubmits[i].addEventListener('click',function(e){
+                    handleSubmit(e,itemPrecio,itemNombre)
+                })
             });
         }
 
